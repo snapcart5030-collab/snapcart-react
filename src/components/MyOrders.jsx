@@ -14,7 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 import DeliveryAnimation from "./DeliveryAnimation.jsx";
 import { useLocation } from "react-router-dom";
 
-const socket = io("http://localhost:5030", {
+const socket = io("https://snapcart-usja.onrender.com", {
   transports: ["websocket", "polling"],
 });
 

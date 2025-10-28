@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { socket } from "./socket";
 import "./Admin.css";
+import {Contact_Url} from './Api_URL_Page'
 import toast from "react-hot-toast";
 import AdminSocketNotifier from "./AdminSocketNotifier";
 
@@ -94,7 +95,7 @@ useEffect(() => {
   // ✅ Fetch messages from DB
   const fetchMessages = async () => {
     try {
-      const res = await axios.get("http://localhost:5030/contact");
+      const res = await axios.get(`${Contact_Url()}/contact`);
       setMessages(res.data || []);
     } catch (err) {
       console.error("Error fetching admin messages:", err);
@@ -108,7 +109,7 @@ useEffect(() => {
 
     try {
       // 1️⃣ Save to DB
-      await axios.post(`http://localhost:5030/contact/${contact._id}/reply`, {
+      await axios.post(`${Contact_Url()}/contact/${contact._id}/reply`, {
         message: msg,
       });
 

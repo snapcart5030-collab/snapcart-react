@@ -41,6 +41,7 @@ const navigate = useNavigate();
             <li><Link to="/categorypc" className="my_footer_bar_text_6">All Categories</Link></li>
             <li><Link to="/offers" className="my_footer_bar_text_6">Offers</Link></li>
             <li><Link  className="my_footer_bar_text_6">New Arrivals</Link></li>
+            <li><Link to={'/admin'}  className="my_footer_bar_text_6">Admin</Link></li>
           </ul>
         </div>
 
@@ -49,6 +50,7 @@ const navigate = useNavigate();
           <ul className="my_footer_list_6">
             <li><Link to={'/contactpage'}  className="my_footer_bar_text_6">Help Center</Link></li>
             <li><Link  className="my_footer_bar_text_6">Privacy Policy</Link></li>
+            <li><Link to={'/previousorders'} className="my_footer_bar_text_6">Privious Orders</Link></li>
           </ul>
         </div>
 
@@ -85,8 +87,9 @@ const navigate = useNavigate();
             <h5 className="my_footer_title_mobile_6">Explore</h5>
             <ul className="my_footer_list_6">
               <li><Link to="/categorypc" className="my_footer_bar_text_6">All Categories</Link></li>
-              <li><Link  className="my_footer_bar_text_6">Offers</Link></li>
+              <li><Link  to={'/offers'} className="my_footer_bar_text_6">Offers</Link></li>
               <li><Link  className="my_footer_bar_text_6">New Arrivals</Link></li>
+              <li><Link to={'/admin'}  className="my_footer_bar_text_6">Admin</Link></li>
             </ul>
           </div>
         </div>
@@ -96,7 +99,7 @@ const navigate = useNavigate();
           <div className="my_footer_mobile_col_6">
             <h5 className="my_footer_title_mobile_6">Connect</h5>
             <p className="my_footer_contact_6">Email: snapcart.com</p>
-            <p className="my_footer_contact_6">Phone: +91 9876543210</p>
+            <p className="my_footer_contact_6">Phone: 9876543210</p>
             <div className="my_footer_social_icons_6">
               <i className="bi bi-facebook my_footer_icon_6"></i>
               <i className="bi bi-instagram my_footer_icon_6"></i>

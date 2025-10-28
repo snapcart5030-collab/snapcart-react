@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import toast from "react-hot-toast";
+import {Loaction_User_Identify} from './Api_URL_Page'
 
 function SaveLocation() {
   const [cookies] = useCookies(["token"]);
@@ -31,7 +32,7 @@ function SaveLocation() {
 
           // ✅ Save location to backend
           await axios.post(
-            "http://localhost:5030/auth/location",
+            `${Loaction_User_Identify()}/auth/location`,
             { latitude, longitude, address },
             { headers: { Authorization: `Bearer ${cookies.token}` } }
           );

@@ -22,7 +22,6 @@ function BottomNavbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScroll]);
 
-  // Function to check if current path is active
   const isActive = (path) => location.pathname === path;
 
   return (

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
+import {MyOrders_Url,OrderStatusById_Url} from './Api_URL_Page'
+
 
 function PreviousOrders() {
   const [orders, setOrders] = useState([]);
@@ -12,7 +14,7 @@ function PreviousOrders() {
   const fetchPreviousOrders = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5030/orders/myorders", {
+      const res = await axios.get(`${MyOrders_Url()}/orders/myorders`, {
         headers: { Authorization: `Bearer ${cookies.token}` },
       });
 
@@ -20,7 +22,7 @@ function PreviousOrders() {
         res.data.map(async (order) => {
           try {
             const statusRes = await axios.get(
-              `http://localhost:5030/orderstatus/${order._id}`
+              `${OrderStatusById_Url()}/orderstatus/${order._id}`
             );
             if (statusRes.data.status === "delivered") {
               return { ...order, status: "delivered" };

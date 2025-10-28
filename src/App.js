@@ -15,6 +15,10 @@ import {
 import PageLoader from "./components/PageLoader";
 import BatteryError from "./components/BatteryError";
 import RefreshLoader from "./components/RefreshLoader";
+import AboutPage from "./components/AboutPage";
+import ServicePage from "./components/ServicePage";
+import Admin from "./components/Admin";
+import OffersPage from "./components/OffersPage";
 
 const SearchPage = lazy(() => import("./components/SearchPage"));
 const LoginPage = lazy(() => import("./components/LoginPage"));
@@ -75,6 +79,7 @@ function App() {
   return (
     <AuthProvider>
       <CartProvider>
+        <Toaster position="top-center" reverseOrder={false} />
         <div id="user_unsecrcoll_laptop">
           <LaptopNavbar />
         </div>
@@ -95,6 +100,10 @@ function App() {
 
           <Routes>
             <Route path="/" element={<HomePage categories={categories} />} />
+            <Route path="/about" element={<AboutPage/>}/>
+            <Route path="/offers" element={<OffersPage/>}/>
+            <Route path="/service" element={<ServicePage/>}/>
+            <Route path="/admin" element={<Admin/>}/>
             <Route path="/cart" element={<CartPage cart={cart} />} />
             <Route path="/contactpage" element={<ContactPage />} />
             <Route path="/search" element={<SearchPage />} />
@@ -165,7 +174,7 @@ function App() {
           </Routes>
        
 
-        <Toaster position="top-center" reverseOrder={false} />
+        
         <BottomNavbar />
       </CartProvider>
     </AuthProvider>

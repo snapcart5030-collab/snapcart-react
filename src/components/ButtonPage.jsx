@@ -16,14 +16,11 @@ export default function ButtonPage({ productId, user, productName }) {
   const [loading, setLoading] = useState(false);
   const [anim, setAnim] = useState("");
   const { cartItems, fetchCart } = useCart();
-
-
   const navigate = useNavigate();
 
-  // Toast ID for single toast
   const toastId = "cart-toast";
 
-  // Reset animation after fade-out
+  // ✅ Reset animation after fade-out
   useEffect(() => {
     if (anim === "fade-out") {
       const timer = setTimeout(() => setAnim(""), 300);
@@ -31,24 +28,27 @@ export default function ButtonPage({ productId, user, productName }) {
     }
   }, [anim]);
 
-  // Fetch initial cart quantity
+  // ✅ Fetch initial cart quantity once
   useEffect(() => {
-    if (!user) return;
+    if (!user?.token) return;
     (async () => {
       try {
         const { data } = await axios.get(Cart_Url(), {
           headers: { Authorization: `Bearer ${user.token}` },
+          timeout: 8000, // ⏱ timeout protection
         });
         const item = data.items.find((i) => i.productId === productId);
         setAdded(!!item);
         setCount(item ? item.quantity : 1);
-      } catch {
+      } catch (err) {
+        console.error("Cart fetch failed:", err.message);
         setAdded(false);
         setCount(1);
       }
     })();
-  }, [productId, user]);
+  }, [productId, user?.token]);
 
+  // ✅ Core cart handler (no lag version)
   const handleCart = async (url, qtyChange, remove = false) => {
     if (!user) {
       toast.error("Please login to manage your cart.", {
@@ -61,51 +61,55 @@ export default function ButtonPage({ productId, user, productName }) {
 
     setLoading(true);
     try {
+      // 🧠 instant UI feedback (optimistic update)
+      setCount((c) => Math.max(1, c + qtyChange));
+      if (remove && count === 1) setAdded(false);
+      else setAdded(true);
+      setAnim(remove ? "fade-out" : "fade-in");
+
+      // 🧾 backend update
       await axios.post(
         url,
         { productId, quantity: 1 },
-        { headers: { Authorization: `Bearer ${user.token}` } }
+        { headers: { Authorization: `Bearer ${user.token}` }, timeout: 8000 }
       );
 
-      setCount((c) => Math.max(1, c + qtyChange));
-      setAdded(!remove || count > 1);
-      setAnim(remove ? "fade-out" : "fade-in");
-      await fetchCart();
+      // 🔄 background cart refresh (non-blocking)
+      fetchCart();
 
       // ✅ Single toast logic
       if (!remove) {
-        toast.custom(
-  (t) => {
-    const totalItems =
-     cartItems?.reduce((sum, item) => sum + (item.quantity || 0), 0) + (remove ? 0 : 1);
+        const totalItems =
+          (cartItems?.reduce((sum, i) => sum + (i.quantity || 0), 0) || 0) + 1;
 
-    return (
-      <div
-        className={`rounded-4 text-white shadow-lg px-4 py-3 flex flex-col items-center gap-2 ${
-          t.visible ? "animate-slide-in" : "animate-slide-out"
-        }`}
-        style={{
-          background: "#00b761",
-        }}
-      >
-        <button
-          onClick={() => {
-            toast.dismiss(toastId);
-            navigate("/cart");
-          }}
-          className="btn p-2  fw-bold text-light px-3 py-1 text-sm"
-        >
-           <span className="">{totalItems}</span> item{totalItems > 1 ? "s" : ""} Added in cart →
-        </button>
-      </div>
-    );
-  },
-  {
-    id: toastId,
-    position: "bottom-center",
-    duration: 3000,
-  }
-);
+        toast.custom(
+          (t) => (
+            <div
+              className={`rounded-4 text-white shadow-lg px-4 py-3 flex flex-col items-center gap-2 ${
+                t.visible ? "animate-slide-in" : "animate-slide-out"
+              }`}
+              style={{
+                background: "#00b761",
+              }}
+            >
+              <button
+                onClick={() => {
+                  toast.dismiss(toastId);
+                  navigate("/cart");
+                }}
+                className="btn p-2 fw-bold text-light px-3 py-1 text-sm"
+              >
+                <span className="">{totalItems}</span>{" "}
+                item{totalItems > 1 ? "s" : ""} added to cart →
+              </button>
+            </div>
+          ),
+          {
+            id: toastId,
+            position: "bottom-center",
+            duration: 3000,
+          }
+        );
       } else {
         toast("🗑️ Item removed from cart.", {
           icon: "🛒",
@@ -114,13 +118,13 @@ export default function ButtonPage({ productId, user, productName }) {
         });
       }
     } catch (err) {
-      console.error(err.response?.data || err.message);
+      console.error("Cart error:", err.response?.data || err.message);
       toast.error(err.response?.data?.msg || "Cart update failed", {
         position: "bottom-right",
         duration: 2000,
       });
     } finally {
-      setTimeout(() => setLoading(false), 400);
+      setLoading(false);
     }
   };
 
@@ -159,7 +163,7 @@ export default function ButtonPage({ productId, user, productName }) {
           className={`add-button ${anim === "fade-out" ? "fade-in" : ""}`}
           disabled={loading}
         >
-          {loading ? <span style={{ fontSize: "15px" }}>Adding</span> : "Add"}
+          {loading ? <span style={{ fontSize: "15px" }}>Adding...</span> : "Add"}
         </button>
       )}
     </div>

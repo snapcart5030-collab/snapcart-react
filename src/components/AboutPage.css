@@ -1,0 +1,102 @@
+/* Main Container */
+#my_about_container_10 {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+/* Title */
+#my_about_title_11 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #8e2de2;
+  text-shadow: 0px 0px 1px black;
+  margin-bottom: 50px;
+}
+
+/* Section Layout */
+#my_about_section_12 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Image Box */
+#my_about_imgbox_13 {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+#my_about_img_14 {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Box */
+#my_about_textbox_15 {
+  flex: 1 1 400px;
+  text-align: left;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Subtitles */
+#my_about_subtitle_16,
+#my_about_subtitle_18 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Paragraph Text */
+#my_about_text_17,
+#my_about_text_19 {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Button */
+#my_about_btn_20 {
+ background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#my_about_btn_20:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #my_about_section_12 {
+    flex-direction: column;
+  }
+
+  #my_about_img_14 {
+    width: 180px;
+    height: 180px;
+  }
+
+  #my_about_textbox_15 {
+    text-align: center;
+    padding: 20px;
+  }
+
+  #my_about_title_11 {
+    font-size: 2rem;
+  }
+}

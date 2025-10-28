@@ -1,0 +1,156 @@
+/* Page Container */
+#admin_page_container_10 {
+  padding: 30px 10px;
+  background: #f9fbfd;
+  min-height: 100vh;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Title */
+#admin_title_11 {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+/* Loading & Empty */
+#admin_loading_12,
+#admin_empty_13 {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Table Wrapper */
+#admin_table_wrapper_14 {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+/* Table */
+#admin_table_15 {
+  width: 95%;
+  margin: auto;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#admin_thead_16 th {
+  background: #e8f0fe;
+  padding: 12px;
+  font-weight: 600;
+  text-align: center;
+  color: #333;
+}
+
+#admin_tbody_17 td {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: center;
+}
+
+/* Status Colors */
+#admin_status_pending_18 {
+  color: #f59e0b;
+  font-weight: 500;
+}
+
+#admin_status_ontheway_19 {
+  color: #2563eb;
+  font-weight: 500;
+}
+
+#admin_status_delivered_20 {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* Buttons */
+#admin_btn_accept_22,
+#admin_btn_sendotp_23,
+#admin_btn_verify_25 {
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin: 3px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#admin_btn_accept_22 {
+  background: #16a34a;
+}
+
+#admin_btn_accept_22:hover {
+  background: #15803d;
+}
+
+#admin_btn_sendotp_23 {
+  background: #2563eb;
+}
+
+#admin_btn_sendotp_23:hover {
+  background: #1d4ed8;
+}
+
+#admin_btn_verify_25 {
+  background: #4b5563;
+}
+
+#admin_btn_verify_25:hover {
+  background: #374151;
+}
+
+/* OTP Input */
+#admin_input_otp_24 {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px;
+  width: 100px;
+  text-align: center;
+  margin: 3px;
+}
+
+/* Delivered Text */
+#admin_delivered_text_26 {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #admin_title_11 {
+    font-size: 1.6rem;
+  }
+
+  #admin_table_15 {
+    width: 100%;
+    font-size: 0.85rem;
+  }
+
+  #admin_thead_16 th,
+  #admin_tbody_17 td {
+    padding: 8px;
+  }
+
+  #admin_action_21 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #admin_btn_accept_22,
+  #admin_btn_sendotp_23,
+  #admin_btn_verify_25 {
+    width: 90%;
+  }
+
+  #admin_input_otp_24 {
+    width: 90%;
+  }
+}

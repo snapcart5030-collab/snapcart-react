@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // ← Add this
 import { AxiosFetchData_File } from "./AxiosFetchData_File";
 import "./CategoryPC.css";
+import PcCategoryShimmer from "./PcCategoryShimmer";
 
 function CategoryPC() {
   const [categories, setCategories] = useState([]);
@@ -15,10 +16,12 @@ function CategoryPC() {
   return (
     <div className="categorypc_wrapper_1">
       <AxiosFetchData_File setCategories={setCategories} />
-      <h2 className="categorypc_title_1"> All Product Categories</h2>
+      <h2 className="categorypc_title_1">  All Product Categories</h2>
       <div className="categorypc_grid_1">
         {isLoading ? (
-          <p className="categorypc_loading_1">Loading categories...</p>
+          <p className="categorypc_loading_1"> 
+             <PcCategoryShimmer/>
+           </p>
         ) : (
           categories.map((cat, idx) => (
             <div

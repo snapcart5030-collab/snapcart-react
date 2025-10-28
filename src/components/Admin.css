@@ -1,135 +1,191 @@
-.admin-wrapper {
-  max-width: 900px;
-  margin: 30px auto;
+#admin-wrapper {
   padding: 20px;
-  border-radius: 20px;
   background: #f8faff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.admin-title {
-  text-align: center;
-  color: #1a237e;
-  font-size: 1.8rem;
+#admin-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
   margin-bottom: 20px;
-  font-weight: 700;
-}
-
-.typing-text {
   text-align: center;
-  color: #777;
-  font-style: italic;
+}
+
+#typing-text {
+  color: #0084ff;
+  font-size: 14px;
   margin-bottom: 10px;
 }
 
-.admin-chat-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+#admin-chat-list {
+  width: 90%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
-.chat-card {
-  background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 15px;
+#chat-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   padding: 15px;
-  cursor: pointer;
   transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
-.chat-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+#chat-card:hover {
+  transform: translateY(-4px);
+  border-color: #dbe4ff;
 }
 
-.chat-card.selected {
-  border: 2px solid #2196f3;
-  background: #f1f8ff;
+#chat-card.selected {
+  border-color: #007bff;
+  background: #f0f6ff;
 }
 
-.chat-header {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
+#chat-header {
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 8px;
   margin-bottom: 10px;
 }
 
-.chat-username {
-  font-size: 1.1rem;
-  color: #0d47a1;
-  font-weight: 600;
+#chat-username {
+  font-size: 18px;
+  font-weight: 500;
+  color: #222;
 }
 
-.chat-messages p {
+#chat-messages {
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+#user-message, #admin-message {
   margin: 6px 0;
+  line-height: 1.5;
+  font-size: 15px;
 }
 
-.user-message {
-  background: #e3f2fd;
+#user-message {
+  color: #333;
+}
+
+#admin-message {
+  background: #e8f0fe;
+  border-radius: 8px;
   padding: 8px 10px;
-  border-radius: 10px;
+  color: #0b5394;
 }
 
-.admin-message {
-  background: #fff3e0;
-  padding: 8px 10px;
-  border-radius: 10px;
-}
-
-.label {
+#label {
   font-weight: 600;
-  color: #37474f;
+  color: #444;
 }
 
-.reply-box {
+#reply-box {
   display: flex;
   flex-direction: column;
+  gap: 8px;
   margin-top: 10px;
 }
 
-.reply-input {
-  width: 100%;
+#reply-input {
+  resize: none;
   height: 60px;
   border-radius: 10px;
   border: 1px solid #ccc;
-  padding: 8px 10px;
-  resize: none;
+  padding: 8px;
+  font-size: 14px;
   outline: none;
-  transition: 0.3s;
+  background: #f9fbff;
 }
 
-.reply-input:focus {
-  border-color: #2196f3;
-  box-shadow: 0 0 4px #90caf9;
+#reply-input:focus {
+  border-color: #007bff;
+  background: #ffffff;
 }
 
-.send-btn {
+#send-btn {
   align-self: flex-end;
-  background: #2196f3;
-  color: white;
+  background: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 14px;
   border: none;
   border-radius: 8px;
-  margin-top: 8px;
-  padding: 8px 16px;
-  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.2s;
 }
 
-.send-btn:hover {
-  background: #1976d2;
+#send-btn:hover {
+  background: #005ecb;
 }
 
-@media (max-width: 600px) {
-  .admin-wrapper {
-    margin: 15px;
-    padding: 15px;
-  }
-
-  .chat-card {
+/* ✅ Mobile-friendly */
+@media (max-width: 768px) {
+  #admin-wrapper {
     padding: 10px;
+    background: #fefeff;
   }
 
-  .reply-input {
+  #admin-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  #admin-chat-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #chat-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  #chat-username {
+    font-size: 16px;
+  }
+
+  #reply-input {
+    height: 55px;
+    font-size: 13px;
+  }
+
+  #send-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  #chat-messages {
+    max-height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  #admin-title {
+    font-size: 20px;
+  }
+
+  #chat-card {
+    border-radius: 10px;
+  }
+
+  #reply-input {
     height: 50px;
+  }
+
+  #send-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
   }
 }

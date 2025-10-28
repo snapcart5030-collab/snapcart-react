@@ -1,16 +1,18 @@
-// src/DeliveryAnimation.js
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { socket } from "./socket";
 import "./DeliveryAnimation.css";
+import {Delivery_progress_id} from './Api_URL_Page'
+
 
 function DeliveryAnimation({ orderId }) {
   const [progress, setProgress] = useState(0);
+  
 
   useEffect(() => {
     const fetchProgress = async () => {
       try {
-        const res = await axios.get(`https://snapcart-usja.onrender.com/deliveryprogress/${orderId}`);
+        const res = await axios.get(`${Delivery_progress_id()}/${orderId}`);
         if (res.data?.progress) setProgress(res.data.progress);
       } catch {
         console.warn("⚠️ No saved progress yet");

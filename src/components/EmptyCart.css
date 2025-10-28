@@ -56,7 +56,7 @@
 @media (max-width: 480px) {
   .empty_cart_box {
     padding: 20px;
-    height: 109vh;
+    height: 111vh;
     position: absolute;
     z-index: 1020;
      background-color: #fff;

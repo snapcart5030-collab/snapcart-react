@@ -67,6 +67,12 @@ export function VerifyOtp_Url() {
 export function Auth_me_url() {
   return "https://snapcart-usja.onrender.com/auth/me";
 }
+export function Delivery_progress_id() {
+  return "https://snapcart-usja.onrender.com/deliveryprogress";
+}
+export function Loaction_User_Identify() {
+  return "https://snapcart-usja.onrender.com/auth/location";
+}
 
 
 

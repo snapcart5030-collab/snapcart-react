@@ -1,0 +1,74 @@
+/* Container for shimmer cards */
+#categoryShimmerContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+/* Each shimmer card */
+#categoryShimmerCard {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  padding: 10px;
+  animation: shimmerMove 1.6s infinite linear;
+}
+
+/* Image shimmer */
+#categoryShimmerImage {
+  width: 100%;
+  height: 100px;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    #f7f6f6 25%,
+    #fffdfd 50%,
+    #ececec 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmerMove 1.5s infinite;
+}
+
+/* Title shimmer */
+#categoryShimmerTitle {
+  width: 60%;
+  height: 16px;
+  margin: 12px auto 0 auto;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    #ececec 25%,
+    #f5f5f5 50%,
+    #ececec 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmerMove 1.5s infinite;
+}
+
+/* Shimmer Animation */
+@keyframes shimmerMove {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  #categoryShimmerContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 12px;
+  }
+
+  #categoryShimmerImage {
+    height: 80px;
+  }
+
+  #categoryShimmerTitle {
+    width: 70%;
+  }
+}
