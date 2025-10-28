@@ -1,0 +1,203 @@
+/* ====== Loading & Section ====== */
+.my_fruits_loading_11,
+.my_fruits_empty_11 {
+  text-align: center;
+  font-size: 17px;
+}
+
+/* ====== Grid & Cards ====== */
+.my_fruits_grid_11 {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+}
+
+.my_fruits_card_11 {
+  text-align: center;
+  background: #fff;
+  padding: 10px;
+  transition: 0.25s;
+
+}
+
+.my_fruits_name_11 {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 6px 0;
+}
+
+.my_fruits_price_11 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #007b00;
+}
+
+.my_fruits_disc_11 {
+  font-size: 13px;
+  color: #963db1;
+  margin: 8px 0;
+}
+
+/* ====== Image + Shimmer ====== */
+.my_fruits_img_wrapper_11 {
+  position: relative;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.my_fruits_img_shimmer_11 {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #f0e3fc 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmerMove 1.5s linear infinite;
+}
+
+.my_fruits_img_11 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.my_fruits_img_11.visible {
+  opacity: 1;
+}
+
+@keyframes shimmerMove {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ====== Subcategory Scroll Bar ====== */
+.my_fruits_subcat_list_11 {
+  display: flex;
+  gap: 15px !important;
+  padding: 15px;
+  overflow-x: auto;
+  white-space: nowrap;
+  transition: 2s all;
+
+  max-height: 80vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+
+}
+
+.my_fruits_subcat_item_11 {
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: white;
+  font-size: 16px;
+  transition: 3s all;
+  font-weight: 300;
+  color: #00b761;
+  text-shadow: 0px 0px 1px black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.my_fruits_subcat_item_11:hover {
+  background: #e9e9e9;
+}
+
+.my_fruits_subcat_item_11.active {
+  background: #8e2de2;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Shimmer for category bar */
+.my_fruits_subcat_shimmer_11 {
+  display: flex;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.my_fruits_subcat_shimmer_item_11 {
+  width: 80px;
+  height: 32px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 37%, #f0f0f0 63%);
+  background-size: 400% 100%;
+  animation: shimmerAnim 1.4s linear infinite;
+}
+
+@keyframes shimmerAnim {
+  0% {
+    background-position: -400px 0;
+  }
+
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .my_fruits_grid_11 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .my_fruits_card_11 {
+    border-bottom: 2px solid #e79cfa;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .my_fruits_name_11 {
+    font-size: 13px;
+  }
+
+  .my_fruits_price_11 {
+    font-size: 12px;
+  }
+
+  .my_fruits_disc_11 {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .my_fruits_grid_11 {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+  }
+
+  .my_fruits_card_11 {
+    border: 1px solid #eee;
+    border-radius: 12px;
+  }
+
+  .my_fruits_card_11:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    border-color: #ccc;
+  }
+}
+
+/* Sticky subcategory bar */
+
+@media (max-width:600px) {
+  .sticky-bar {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    transition: 3s all;
+    gap: 10;
+    padding: 15px;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+  }
+}

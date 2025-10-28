@@ -1,0 +1,192 @@
+.carousel-sectionaaaa {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  perspective: 1800px;
+  position: relative;
+}
+
+.carousel-wrapperaaaa {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  max-width: 1000px;
+  perspective: 2000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carouselaaaa {
+  position: relative;
+  width: 120px;
+  height: 350px;
+  transform-style: preserve-3d;
+  transition: transform 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ======= Carousel Faces ======= */
+.carousel__faceaaaa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 320px;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-cardaaaa {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  background: linear-gradient(160deg, #ffffff 0%, #f3f4f6 100%);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  opacity: 0.5;
+  transform: scale(0.85);
+  transition: all 0.5s ease;
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.product-cardaaaa.active-card {
+  transform: scale(1.1);
+  opacity: 1;
+  z-index: 10;
+}
+
+/* ======= Image Container ======= */
+.card-image-containeraaaa {
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-imageaaaa {
+  width: 90%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.product-cardaaaa.active-card .card-imageaaaa {
+  transform: scale(1.08);
+}
+
+/* ======= Card Content Area ======= */
+.card-contentaaaa {
+  background: white;
+  padding: 12px 8px;
+  height: calc(100% - 180px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.product-nameaaaa {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+/* ======= Hover Glow Effect ======= */
+.product-cardaaaa.active-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.3), transparent 70%);
+  z-index: -1;
+}
+
+/* ======= Responsive Design ======= */
+@media (max-width: 1024px) {
+  .carousel-wrapperaaaa {
+    height: 400px;
+  }
+
+  .carousel__faceaaaa {
+    width: 220px;
+    height: 300px;
+  }
+
+  .card-image-containeraaaa {
+    height: 160px;
+  }
+
+  .product-nameaaaa {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-wrapperaaaa {
+    height: 350px;
+  }
+
+  .carousel__faceaaaa {
+    width: 180px;
+    height: 260px;
+  }
+
+  .card-image-containeraaaa {
+    height: 140px;
+  }
+
+  .product-nameaaaa {
+    font-size: 13px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .carousel-wrapperaaaa {
+    height: 300px;
+  }
+
+  .carousel__faceaaaa {
+    width: 150px;
+    height: 220px;
+  }
+
+  .card-image-containeraaaa {
+    height: 120px;
+  }
+
+  .product-nameaaaa {
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width: 360px) {
+  .carousel-wrapperaaaa {
+    height: 250px;
+  }
+
+  .carousel__faceaaaa {
+    width: 130px;
+    height: 200px;
+  }
+
+  .card-image-containeraaaa {
+    height: 100px;
+  }
+
+  .product-nameaaaa {
+    font-size: 11px;
+  }
+}

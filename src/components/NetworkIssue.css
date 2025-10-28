@@ -1,0 +1,240 @@
+.mynetwork_proble_5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.network__container {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgb(182, 93, 204);
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+}
+
+.network__animation {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Signal Bars Animation */
+.network__signal {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 60px;
+}
+
+.network__bar {
+  width: 12px;
+  background: #ff6b6b;
+  border-radius: 6px 6px 0 0;
+  animation: signalPulse 2s ease-in-out infinite;
+}
+
+.network__bar--1 {
+  height: 15px;
+  animation-delay: 0.1s;
+}
+
+.network__bar--2 {
+  height: 25px;
+  animation-delay: 0.2s;
+}
+
+.network__bar--3 {
+  height: 35px;
+  animation-delay: 0.3s;
+}
+
+.network__bar--4 {
+  height: 45px;
+  animation-delay: 0.4s;
+}
+
+.network__bar--5 {
+  height: 55px;
+  animation-delay: 0.5s;
+}
+
+/* WiFi Rings Animation */
+.network__wifi {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.network__ring {
+  border: 3px solid transparent;
+  border-top-color: #4ecdc4;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: wifiPulse 2s ease-in-out infinite;
+}
+
+.network__ring--1 {
+  width: 30px;
+  height: 30px;
+  animation-delay: 0.1s;
+}
+
+.network__ring--2 {
+  width: 50px;
+  height: 50px;
+  animation-delay: 0.3s;
+}
+
+.network__ring--3 {
+  width: 70px;
+  height: 70px;
+  animation-delay: 0.5s;
+}
+
+.network__title {
+  color: #2d3436;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.network__message {
+  color: #636e72;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.network__suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.network__tip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  color: #495057;
+  font-size: 0.95rem;
+}
+
+.network__tip-icon {
+  font-size: 1.2rem;
+}
+
+.network__retry-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.network__retry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+}
+
+.network__retry-btn:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes signalPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.1);
+  }
+}
+
+@keyframes wifiPulse {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mynetwork_proble_5 {
+    /* padding: 15px; */
+  }
+  
+  .network__container {
+    /* padding: 30px 20px; */
+  }
+  
+  .network__title {
+    font-size: 1rem;
+  }
+  
+  .network__message {
+    font-size: 1rem;
+  }
+  
+  .network__animation {
+    height: 150px;
+  }
+  
+  .network__bar {
+    width: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .network__container {
+    padding: 25px 15px;
+  }
+  
+  .network__title {
+    font-size: 1.8rem;
+  }
+  
+  .network__suggestions {
+    gap: 8px;
+  }
+  
+  .network__tip {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  
+  .network__retry-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}

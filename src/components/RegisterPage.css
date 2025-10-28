@@ -1,0 +1,150 @@
+/* Container and background */
+.register_container_7 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 5px;
+
+}
+
+/* Card styling */
+.register_card_7 {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px 28px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+}
+
+/* Title */
+.register_title_7 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #4a00e0;
+}
+
+/* Message alert */
+.register_message_7 {
+  background-color: #e0e0ff;
+  color: #4a00e0;
+  padding: 10px;
+  margin-bottom: 13px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* Input groups */
+.register_input_group_7 {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Labels */
+.register_label_7 {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.register_input_7 {
+  width: 100%;
+  padding: 8px 8px;
+  border-radius: 8px;
+  border: 1px solid #b77bec !important;
+  outline: none;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.register_input_7:focus {
+  border-color: #8e2de2;
+  box-shadow: 0 0 5px #8e2de2;
+}
+
+/* Button */
+#user_register_button_7 {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#user_register_button_7:hover {
+  background: linear-gradient(135deg, #ae62f0, #8d68f1);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive for mobile */
+@media (max-width: 480px) {
+  .register_container_7 {
+    display: flex;
+    justify-content: center;
+    align-items: normal;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1020;
+    background-color: white;
+    padding: 0;
+    background-image: url('/public/image/finalcart.webp');
+    background-size: cover;
+  }
+
+  .register_card_7 {
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: none;
+  }
+
+  .register_title_7 {
+    font-size: 24px;
+  }
+
+  #user_register_button_7 {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .register_input_7 {
+    font-size: 14px;
+    padding: 13px 12px;
+  }
+}
+
+
+.go_to_login_page {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  color: #ae62f0;
+}
+
+.go_to_login_page a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 4px;
+  transition: 0.3s;
+}
+
+.go_to_login_page a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}

@@ -1,0 +1,64 @@
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: linear-gradient(135deg, #f7f7f7, #e9ecef);
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo-text {
+  font-size: 3rem;
+  color: #222;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.logo-text span {
+  color: #ff6b00;
+}
+
+.cart-icon {
+  position: relative;
+  width: 60px;
+  height: 40px;
+}
+
+.cart-body {
+  width: 100%;
+  height: 25px;
+  background: #ff6b00;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 10px;
+}
+
+.cart-handle {
+  width: 40%;
+  height: 6px;
+  background: #222;
+  position: absolute;
+  top: 0;
+  left: 30%;
+  transform: rotate(-25deg);
+  border-radius: 4px;
+}
+
+.cart-wheel {
+  width: 12px;
+  height: 12px;
+  background: #222;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+}
+
+.cart-wheel.left {
+  left: 10%;
+}
+
+.cart-wheel.right {
+  right: 10%;
+}

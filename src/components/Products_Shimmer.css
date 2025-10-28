@@ -1,0 +1,84 @@
+/* Base card */
+#shimmer_card {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -250px 0;
+  }
+  100% {
+    background-position: 250px 0;
+  }
+}
+
+/* General shimmer element style */
+#shimmer_img,
+#shimmer_title,
+#shimmer_rating,
+#shimmer_price,
+#shimmer_line {
+  border-radius: 6px;
+  animation: shimmer 1.8s infinite linear;
+  background-size: 250px 100%;
+}
+
+/* Image shimmer */
+#shimmer_img {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, #e5dafa, #dae6fd, #f0e8ff);
+}
+
+/* Title shimmer */
+#shimmer_title {
+  width: 75%;
+  height: 14px;
+  background: linear-gradient(135deg, #e4d9fc, #d8d5f8, #e8e2ff);
+  margin-top: 4px;
+}
+
+/* Rating shimmer */
+#shimmer_rating {
+  width: 45%;
+  height: 12px;
+  background: linear-gradient(135deg, #c1d6ff, #dce6ff);
+  margin-top: 2px;
+}
+
+/* Price shimmer */
+#shimmer_price {
+  width: 100%;
+  height: 28px;
+  background: linear-gradient(135deg, #e8d9fd, #cfe4f8, #f5e8ff);
+  margin-top: 4px;
+}
+
+/* Description container */
+#shimmer_desc {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+/* Description line shimmer */
+#shimmer_line {
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(135deg, #e6defc, #dfe9fc, #ddcff8);
+}
+
+
+#loading_text_cards{
+  color: blueviolet;
+  font-weight: 600;
+  animation: shimmer 1.8s infinite linear;
+}

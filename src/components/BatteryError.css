@@ -1,0 +1,130 @@
+/* Wrapper for the component */
+.my_battery_problem_animation_4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  min-height: 60vh;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+
+/* Battery Container */
+.battery_wrapper_4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Battery Shape */
+.battery_4 {
+  position: relative;
+  width: 80px;
+  height: 40px;
+  border: 3px solid #444;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #eee;
+}
+
+.battery_tip_4 {
+  position: absolute;
+  right: -10px;
+  width: 10px;
+  height: 20px;
+  background: #444;
+  border-radius: 2px;
+}
+
+/* Battery Level Animation */
+.battery_level_4 {
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(90deg, #ff4c4c, #ff9c4c);
+  animation: battery_pulse_4 1s infinite alternate;
+}
+
+/* Pulse animation for battery */
+@keyframes battery_pulse_4 {
+  0% { width: 15%; }
+  50% { width: 20%; }
+  100% { width: 18%; }
+}
+
+/* Text Animation */
+.charging_text_4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e74c3c;
+  animation: text_flash_4 1s infinite alternate;
+}
+
+/* Flashing text animation */
+@keyframes text_flash_4 {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+/* Village person animation */
+.village_person_animation_4 {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.person_4 {
+  width: 30px;
+  height: 50px;
+  position: relative;
+  animation: bounce_4 1s infinite;
+}
+
+.head_4 {
+  width: 15px;
+  height: 15px;
+  background: #c0bebd;
+  border-radius: 20%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.body_4 {
+  width: 10px;
+  height: 35px;
+  background: black;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Bouncing animation */
+@keyframes bounce_4 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Text below village person */
+.person_text_4 {
+  font-size: 16px;
+  color: #34495e;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .battery_4 { width: 60px; height: 30px; }
+  .charging_text_4 { font-size: 12px; }
+  .person_4 { width: 25px; height: 50px;margin-top: -20px; }
+  .person_text_4 { font-size: 15px; }
+}

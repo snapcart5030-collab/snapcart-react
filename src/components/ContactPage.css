@@ -1,0 +1,222 @@
+/* Wrapper and background */
+.my_contact_wrapper_5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* Chat box */
+.my_contact_box_5 {
+  background: rgba(255,255,255,0.95);
+  width: 500px;
+  max-width: 100%;
+  border-radius: 15px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+@media (max-width: 480px) {
+  .my_contact_wrapper_5 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    z-index: 1020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.2); /* optional overlay effect */
+  }
+
+  .my_contact_box_5 {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chat_header_5 {
+    padding: 10px;
+    flex-shrink: 0;
+      background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .my_chat_box {
+    flex: 1; /* take all available space */
+    max-height: none; /* remove previous fixed max-height */
+    overflow-y: auto;
+    padding: 10px;
+    background: #f7f7f7;
+  }
+
+  .my_contact_textarea_5 {
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 0;
+    border: none;
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid #ddd;
+  }
+
+  .my_contact_msg_button_5 {
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 0;
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  /* Keep textarea + button fixed at bottom */
+  .my_contact_input_wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+
+  .chat_header_5 h2 {
+    font-size: 18px;
+  }
+}
+
+/* Header */
+.chat_header_5 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.chat_back_btn_5 {
+  font-size: 24px;
+  color: white;
+  background: transparent;
+  border: none;
+}
+
+.chat_delete_btn_5 {
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  opacity:1;
+} 
+
+.chat_delete_btn_5:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+
+.chat_message_5 {
+  margin-bottom: 10px;
+}
+
+.user_msg_5 p {
+  background: #dcf8c6;
+  padding: 8px 12px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.admin_msg_5 p, .admin_response_5 {
+  background: #fff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+/* Typing indicator */
+.typing_indicator_5 {
+  font-style: italic;
+  color: gray;
+  margin-top: 5px;
+}
+
+/* Textarea */
+.my_contact_textarea_5 {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.my_contact_textarea_5:focus {
+  border-color: #8e2de2;
+  box-shadow: 0 0 5px #8e2de2;
+  outline: none;
+}
+
+/* Send button */
+.my_contact_msg_button_5 {
+  width: 100%;
+  padding: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 5px;
+}
+
+.my_contact_msg_button_5:hover {
+  background: #8e2de2;
+  transform: translateY(-2px);
+}
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 480px) {
+  .my_contact_wrapper_5 {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 0;
+    height: 100vh;
+    z-index: 1020;
+  }
+
+  .my_contact_box_5 {
+    width: 100%;
+    border-radius: 0;
+
+  }
+
+  .my_chat_box {
+    
+    max-height: calc(100vh - 200px);
+  }
+
+  .my_contact_textarea_5 {
+    font-size: 14px;
+    border: 2px solid #8e2de2;
+    margin-top: -90px;
+  }
+
+  .my_contact_msg_button_5 {
+    font-size:16px;
+    padding: 20px;
+    border-radius: 0px;
+    
+  }
+
+  .chat_header_5 h2 {
+    font-size: 20px;
+  }
+}

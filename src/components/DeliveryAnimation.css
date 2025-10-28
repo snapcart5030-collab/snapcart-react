@@ -1,0 +1,28 @@
+.delivery-screen {
+  position: relative;
+  width: 100%;    /* match your route image size or make responsive */
+  height: 100vh;
+  background-image: url('https://lh3.googleusercontent.com/oTRfe6jfXkORXXA9NkZkP2eN1Nul7UA7Hhq_BzhX6ijKpaPDVrjdE4JhZkCQeZVyo0deinJIyEjI7_j1ZNLD2P9kun-g7tw5viG4AMmU=w638');
+  margin: 0 auto;
+  background-size: cover;
+  user-select: none;
+}
+
+.route-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* bike should be positioned absolute and centered using translate(-50,-50) */
+.delivery-rider {
+  position: absolute;
+  width: 130px;      /* tune size to taste */
+  height: auto;
+  transition: none; /* we use requestAnimationFrame for smoothness; can keep tiny CSS transition if desired */
+  will-change: transform, left, top;
+  pointer-events: none;
+}

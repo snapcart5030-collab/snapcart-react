@@ -1,0 +1,9 @@
+.only_category_for_pc_laptops_po{
+         display: block;
+    }
+
+@media (max-width:600px) {
+    .only_category_for_pc_laptops_po{
+         display: none;
+    }
+}

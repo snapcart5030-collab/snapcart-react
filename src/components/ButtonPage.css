@@ -1,0 +1,174 @@
+
+.button-group {
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    border-radius: 8px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+
+#addtocart_button {
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 8px 14px;
+    font-size: 19px;
+    width: 150px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+
+#plus_button,
+#minus_button {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+
+#plus_button:hover,
+#minus_button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+.count-text {
+    padding: 8px 14px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a00e0;
+    background: white;
+    min-width: 30px;
+    border: 2px solid #4a00e0;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+
+@keyframes fadeOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.8); }
+}
+
+
+.count-wrapper {
+    position: relative;
+    padding: 8px 14px;
+}
+
+.spin-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 36px;
+    height: 36px;
+    margin: -18px 0 0 -18px;
+    border: 3px solid rgba(233, 211, 252, 0.5);
+    border-top-color: #7410cc;
+    border-radius: 50%;
+    z-index: 0;
+    animation: spin 0.5s linear;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+/*  */
+/* ✅ Mobile small button design */
+@media (max-width: 576px) {
+  #addtocart_button {
+    padding: 6px 10px;
+    font-size: 14px;
+    width: 120px;
+  }
+
+  #plus_button,
+  #minus_button {
+    font-size: 16px;
+    padding: 3px 6px;
+  }
+
+  .count-text {
+    font-size: 14px;
+    padding: 5px 8px;
+    min-width: 24px;
+  }
+
+  .button-group {
+    border-radius: 5px;
+  }
+
+  .count-wrapper {
+    padding: 5px 8px;
+  }
+
+
+  .spin-circle {
+    position: absolute;
+    top: 70%;
+    left: 66%;
+    width: 24px;
+    height: 24px;
+    margin: -18px 0 0 -18px;
+    border: 3px solid rgba(233, 211, 252, 0.5);
+    border-top-color: #7410cc;
+    border-radius: 50%;
+    z-index: 0;
+    animation: spin 0.5s linear;
+}
+
+#addtocart_button {
+    width: 120px;
+
+}
+
+
+
+}
+
+
+.cart-toast-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.product-name {
+  max-width: 150px; /* or whatever width fits your toast */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+

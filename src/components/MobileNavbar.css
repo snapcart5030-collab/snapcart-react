@@ -1,0 +1,131 @@
+/* ============ BASIC SETUP ============ */
+.mobile-navbarwwwww {
+  overflow-x: hidden;
+}
+
+/* ============ SLIDE CAROUSEL (No Fade) ============ */
+.carousel-containerwwwww {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 180px;
+  z-index: 0;
+}
+
+.carousel-inner-customwwwww {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  width: 100%;
+
+}
+
+.carousel-slide-customwwwww {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-slide-customwwwww img {
+  width: 100%;
+
+}
+
+.carousel-overlaywwwww {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ============ NAVBAR STYLES ============ */
+.navbar-top-rowwwwww {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.top_menu_style {
+  font-size: 25px;
+  color: white;
+}
+
+.top-iconswwwww {
+  color: white;
+}
+
+.cart-iconwwwww {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  background: red;
+   box-shadow: 0px 0px 10px black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============ SEARCH SECTION ============ */
+.search-sectionwwwww {
+  margin-top: 60px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.search-sectionwwwww.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.search-sectionwwwww.visible {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.search-boxwwwww {
+  border-radius: 10px;
+  flex: 1;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  height: 45px;
+}
+
+.search-boxwwwww input {
+  border: none;
+  outline: none;
+  flex: 1;
+  background-color: transparent;
+}
+
+.veg-modewwwww label {
+  font-size: 13px;
+  color: white;
+  font-weight: 700;
+}
+
+.custom-switch .form-check-input {
+  width: 45px !important;
+  height: 22px;
+  cursor: pointer;
+}

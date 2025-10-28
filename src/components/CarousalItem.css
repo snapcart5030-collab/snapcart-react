@@ -1,0 +1,23 @@
+.carousel-wrapper {
+  width: 100%;
+  padding: 5px;
+}
+
+.carousel-img {
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+
+/* Mobile height */
+@media (max-width: 767px) {
+  .carousel-img {
+    height: 150px;
+  }
+}
+
+/* Optional: rounded corners and shadow */
+.carousel-img {
+  border-radius: 15px;
+}
